@@ -1,6 +1,6 @@
 import cv2 as cv
 # Reading Images
-# img = cv.imread('Photos/pic_large.jpg')  # imread() is the method to read images
+# img = cv.imread('Basics\Photos/pic_large.jpg')  # imread() is the method to read images
 #
 # cv.imshow('Cat', img)  # imshow() displays the image .
 # # 2 Parameters 1. window name, 2. image matrix
@@ -9,7 +9,7 @@ import cv2 as cv
 
 #Reading Videos
 
-cap = cv.VideoCapture('Videos/Pexels Videos 2784.mp4') # used to capture webcam vid or a vid path
+cap = cv.VideoCapture('Basics\Videos\Pexels Videos 2784.mp4') # used to capture webcam vid or a vid path
 while True:
     isTrue, frame = cap.read() # used to read each frame of video
     # Returns a boolean and the frame matrix for each frame
