@@ -10,8 +10,8 @@ def rescaleFrame(frame, scale=0.05):
 
 
 def changeRes(width, height):  # Only changes resolution for live video
-    capture.set(3, width)
-    capture.set(4, height)
+    cap.set(3, width)
+    cap.set(4, height)
 
 
 # cap = cv.VideoCapture('Videos/Pexels Videos 2784.mp4')  # used to capture webcam vid or a vid path
