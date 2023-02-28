@@ -2,7 +2,7 @@ import cv2 as cv
 import mediapipe as mp
 import time
 
-cap = cv.VideoCapture('HandDetection\HandVideo\production ID_3796261.mp4')
+cap = cv.VideoCapture('HandDetection\Videos\production ID_3796261.mp4')
 # Get the video's resolution
 width = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
