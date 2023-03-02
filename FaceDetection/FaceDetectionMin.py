@@ -2,7 +2,7 @@ import cv2 as cv
 import mediapipe as mp
 import time
 
-cap = cv.VideoCapture('FaceDetection\Videos\Vid (2).mp4')
+cap = cv.VideoCapture('FaceDetection\Videos\Vid (4).mp4')
 # Get the video's resolution
 width = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
@@ -39,11 +39,14 @@ while cap.isOpened():
             bbox = int(bboxC.xmin * iw), int(bboxC.ymin * ih), \
                    int(bboxC.width * iw), int(bboxC.height * ih)
             cv.rectangle(img, bbox, (255, 0 ,255), 3)
+            cv.putText(img,f"{int(detection.score[0]*100)}%", 
+                       (bbox[0], bbox[1]-20), cv.FONT_HERSHEY_SIMPLEX, 2,
+                (255, 0, 255), 3)
     cTime = time.time()
     fps = 1/(cTime - pTime)
     pTime = cTime
-    cv.putText(img,f"FPS: {int(fps)}", (20, 70), cv.FONT_HERSHEY_PLAIN, 3,
-                (255, 0, 255), 3)
+    cv.putText(img,f"FPS: {int(fps)}", (20, 70), cv.FONT_HERSHEY_SIMPLEX, 2,
+                (0, 255, 0), 3)
     cv.imshow("Image",img)    
     if cv.waitKey(1) == ord('q'):
         break
